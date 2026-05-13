@@ -1,0 +1,15 @@
+{
+    "balance": 140,
+    "history": [
+        {
+            "action": "ocean_cleanup",
+            "reward": 100,
+            "match": "75.19%"
+        },
+        {
+            "action": "plantation",
+            "reward": 40,
+            "match": "95.47%"
+        }
+    ]
+}

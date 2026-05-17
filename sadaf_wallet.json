@@ -1,15 +1,12 @@
 {
-    "balance": 140,
-    "history": [
-        {
-            "action": "ocean_cleanup",
-            "reward": 100,
-            "match": "75.19%"
-        },
-        {
-            "action": "plantation",
-            "reward": 40,
-            "match": "95.47%"
-        }
-    ]
+    "wallet_id": "0xSADAF_2035_GREEN_NODE",
+    "recovery_hash": "a414267bc959fde87ab72199effaaec79947c512afd59fb5c4a5d9f1e297b3e6",
+    "guardians_encrypted": [
+        "e8055ee63d4d1bab84157d6a73510e92a0e2bc8047b5e22af9b4c818548ecfd3",
+        "7875750998cabcd5ed055919a3d72bbbd5fb3dbbbac6a124f2cab60129254c4d",
+        "bf7efc22854ef2a6d62177ca423a3ea74de0983ab78b30c5cf694e69610184c9"
+    ],
+    "recovery_threshold": "2/3",
+    "security_standard": "AES-256-SALTED-POST-QUANTUM",
+    "status": "SYNCED_TO_BIOMETRICS"
 }

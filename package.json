@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@biconomy/account": "^4.5.7",
-    "@biconomy/paymaster": "^3.1.4"
+    "@biconomy/paymaster": "^3.1.4",
+    "circomlib": "^2.0.5"
   }
 }

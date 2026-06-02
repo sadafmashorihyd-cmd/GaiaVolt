@@ -1,0 +1,15 @@
+{
+    "carbon_rate": 1.95,
+    "weather": {
+        "temp": 32.2,
+        "condition": "Stormy",
+        "code": 95,
+        "location": "24.8607, 67.0011"
+    },
+    "timestamp": "2026-05-29T11:37:24.291583+00:00",
+    "data_sources": [
+        "carbonintensity.org.uk",
+        "open-meteo.com"
+    ],
+    "status": "LIVE"
+}

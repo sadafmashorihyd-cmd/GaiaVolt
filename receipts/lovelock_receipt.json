@@ -1,0 +1,15 @@
+{
+  "wallet_address": "0xPAKISTAN_USER_WALLET_ADDRESS_HERE",
+  "issued_at_utc": "2026-05-31T04:42:30.407254",
+  "receipt_id": "0ecca9ca32c54c57150544f37c6ada5f3b156346ddfefa0042fc8a29b3a1957e",
+  "co2_tonnes": 0.0025,
+  "joules_mitigated": 8815243104.22,
+  "arctic_mm2_cooled": 2026218.2962,
+  "lovelock_score": 1.0,
+  "proof_fingerprint": "c8ee3b8ac140b593be82bb622f442b2975ff3d4066a12c6c5d237dad6af2cbc9",
+  "tx_hash": "0x731a03913ac34b18476ff9d4243c58877dd4bb8c8367689a9c5b4adfff5ff397",
+  "blockchain_provider": "Infura",
+  "mint_latency_ms": 81.37249946594238,
+  "human_message": "Your action just cooled a 2026218.2962 mm\u00b2 patch of the Arctic. This contributes 0.0000000000% toward the 2050 preservation goal. Verified on-chain: 0x731a03913ac34b...",
+  "receipt_hash": "28810da51aca4fcf56aaee881f343a0bbdfa7f2f83243e667f23eb312df268a5"
+}

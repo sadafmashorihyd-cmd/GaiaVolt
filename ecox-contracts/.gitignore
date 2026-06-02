@@ -1,6 +1,13 @@
-node_modules/
-.venv/
-venv/
-__pycache__/
-artifacts/
-cache/
+echo .env >> .gitignore
+echo secret.key >> .gitignore
+echo sadaf_wallet.json >> .gitignore
+echo fraud_attempts.log >> .gitignore
+echo *.h5 >> .gitignore
+echo *.tflite >> .gitignore
+echo *.onnx >> .gitignore
+echo *.pt >> .gitignore
+echo __pycache__/ >> .gitignore
+echo logs/ >> .gitignore
+echo assets/ >> .gitignore
+echo temp_model_dir/ >> .gitignore
+echo dataset/ >> .gitignore

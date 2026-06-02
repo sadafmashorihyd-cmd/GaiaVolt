@@ -1,33 +1,64 @@
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def show_my_wealth():
-    # 1. Check karna ke wallet file bani bhi hai ya nahi
-    if not os.path.exists('sadaf_wallet.json'):
+    # ✅ P97 FIXED: hardcoded nahi — .env se
+    wallet_file = os.getenv('WALLET_FILE', 'sadaf_wallet.json')
+
+    if not os.path.exists(wallet_file):
         print("\n❌ Wallet not found! Pehle predict_ecox.py chala kar coins earn karein.")
         return
 
-    # 2. Data load karna
-    with open('sadaf_wallet.json', 'r') as f:
-        data = json.load(f)
-        
-    print("\n" + "="*45)
-    print("🌍 ECOX GLOBAL WEALTH DASHBOARD - SADAF")
-    print("="*45)
-    print(f"💰 TOTAL BALANCE: {data['balance']} Eco-Coins")
-    print("-" * 45)
-    
-    # 3. Table Header
-    print(f"{'Action Name':<20} | {'Reward':<10} | {'Accuracy'}")
-    print("-" * 45)
-    
-    # 4. History dikhana
-    for entry in data['history']:
-        print(f"{entry['action']:<20} | {entry['reward']:<10} | {entry['match']}")
-    
-    print("-" * 45)
-    print("🚀 Future Goal: Real-money conversion pending...")
-    print("="*45 + "\n")
+    try:
+        with open(wallet_file, 'r') as f:
+            data = json.load(f)
+    except json.JSONDecodeError:
+        print("❌ Wallet file corrupted!")
+        return
+
+    # ✅ P98 FIXED: User name .env se
+    user = os.getenv('REGISTERED_USER', 'User').upper()
+
+    print("\n" + "="*50)
+    print(f"🌍 ECOX GLOBAL WEALTH DASHBOARD — {user}")
+    print("="*50)
+    print(f"💰 TOTAL BALANCE: {data.get('balance', 0)} Eco-Coins")
+    print("-"*50)
+
+    history = data.get('history', [])
+
+    if not history:
+        print("   No transactions yet!")
+    else:
+        print(f"{'Action':<22} | {'Reward':<10} | {'Confidence':<12} | Time")
+        print("-"*50)
+        for entry in history:
+            # Timestamp format
+            ts = entry.get('timestamp', 0)
+            if ts:
+                from datetime import datetime, timezone
+                time_str = datetime.fromtimestamp(
+                    ts, tz=timezone.utc
+                ).strftime("%m/%d %H:%M")
+            else:
+                time_str = "N/A"
+
+            print(
+                f"{entry.get('action','?'):<22} | "
+                f"{entry.get('reward',0):<10} | "
+                f"{entry.get('match','?'):<12} | "
+                f"{time_str}"
+            )
+
+    print("-"*50)
+    print(f"   Total transactions: {len(history)}")
+    print(f"🚀 Future: Real-money conversion coming soon!")
+    print("="*50 + "\n")
+
 
 if __name__ == "__main__":
     show_my_wealth()

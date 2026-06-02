@@ -1,11 +1,30 @@
 {
-    "balance": 45,
+    "balance": 70,
     "history": [
         {
-            "action": "organic_farming",
-            "reward": 45,
-            "match": "94.92%",
-            "timestamp": 1779019843.9765348
+            "action": "solar_panels",
+            "reward": 50,
+            "match": "99.90%",
+            "latency_ms": 226.21,
+            "timestamp": 1780054361.876094,
+            "date": "2026-05-29 11:32 UTC"
+        },
+        {
+            "action": "cycling",
+            "reward": 20,
+            "match": "100.00%",
+            "latency_ms": 216.16,
+            "timestamp": 1780054362.7418258,
+            "date": "2026-05-29 11:32 UTC"
         }
-    ]
+    ],
+    "processed_hashes": [
+        "e3dc808622bab99e30b1a40f492ca09d9d25d59177d32186daa86f1967effa6a",
+        "40cf814678dcc6942f4cbc3017bf9127993bfdf4ef3f66681dbdae2537db73c3"
+    ],
+    "processed_phashes": [
+        "bd939293923f922c",
+        "d4d5d5a52678d08b"
+    ],
+    "identity_hash": "ef8219698a44c0cbca180fcf4aa1ada5db55487a60cb83959ea7849cc8ff8d75"
 }

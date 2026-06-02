@@ -1,19 +1,41 @@
+require("dotenv").config();
 const hre = require("hardhat");
 
 async function main() {
-    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-    const trustedOracleAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
+    // ✅ P131 FIXED: .env se contract address
+    const contractAddress = process.env.CONTRACT_ADDRESS;
+
+    // ✅ P132 FIXED: .env se oracle address
+    const trustedOracleAddress = process.env.ORACLE_NODE_ADDRESS;
+
+    // Validation
+    if (!contractAddress) {
+        console.error("❌ CONTRACT_ADDRESS not set in .env!");
+        process.exit(1);
+    }
+    if (!trustedOracleAddress) {
+        console.error("❌ ORACLE_NODE_ADDRESS not set in .env!");
+        process.exit(1);
+    }
+
+    console.log("\n" + "=".repeat(55));
+    console.log("🔗 ORACLE INITIALIZATION");
+    console.log("=".repeat(55));
+    console.log(`   Contract: ${contractAddress}`);
+    console.log(`   Oracle:   ${trustedOracleAddress}`);
 
     const EcoCoin = await hre.ethers.getContractFactory("EcoCoin");
     const contract = EcoCoin.attach(contractAddress);
 
-    console.log("🔗 Binding authorized Oracle Node address on-chain...");
+    console.log("\n   Binding Oracle Node on-chain...");
     const tx = await contract.updateOracleNode(trustedOracleAddress);
     await tx.wait();
-    console.log("✅ Success! Oracle address locked on-chain.");
+
+    console.log("   ✅ Oracle address locked on-chain!");
+    console.log("=".repeat(55) + "\n");
 }
 
 main().catch((error) => {
-    console.error(error);
+    console.error("❌ Error:", error.message);
     process.exitCode = 1;
 });

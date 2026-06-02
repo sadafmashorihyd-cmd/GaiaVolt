@@ -1,0 +1,12 @@
+{
+    "file_name": "image_1.jpg",
+    "file_hash": "2f28bfb7be4467d47d8fb38349709a134c688cf9cb20ccf1da723194f92d36d0",
+    "location": {
+        "lat": 24.8607,
+        "lon": 67.0011
+    },
+    "weather": "Unknown",
+    "verified": true,
+    "timestamp": "2026-05-28T11:38:04.090565+00:00",
+    "version": "EcoX-1.0"
+}

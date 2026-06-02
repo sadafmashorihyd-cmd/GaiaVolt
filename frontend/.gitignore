@@ -1,0 +1,24 @@
+# --- Project EcoX Specific ---
+
+# AI Models (Heavy Files)
+*.h5
+*.pt
+*.onnx
+*.tflite
+
+# ZK-Proof artifacts
+*.zkey
+*.r1cs
+*.sym
+*.wtns
+*.ptau
+*.json
+
+# Databases
+*.db
+*.log
+
+# Cache & Environment
+__pycache__/
+.venv/
+.env

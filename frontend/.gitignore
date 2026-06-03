@@ -1,24 +1,68 @@
-# --- Project EcoX Specific ---
+# Keys & Secrets
+*.pem
+*.key
+*.json.key
+witness.wtns
+spatial_shield.sym
+spatial_shield.r1cs
+spatial_shield_0000.zkey
 
-# AI Models (Heavy Files)
-*.h5
-*.pt
-*.onnx
-*.tflite
+# Build & Cache
+.next/
+build/
+dist/
+*.pyc
+*.pyo
 
-# ZK-Proof artifacts
-*.zkey
-*.r1cs
-*.sym
-*.wtns
-*.ptau
-*.json
-
-# Databases
-*.db
+# Logs & DB
 *.log
+*.db
+geo_fence_log.json
+fingerprints_index.json
 
-# Cache & Environment
-__pycache__/
-.venv/
-.env
+# Test files
+test_fake.jpg
+test_spoof*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large model files
+*.onnx
+*.bin
+temp_model_dir/
+# ZK Proof files (large)
+pot12_0000.ptau
+pot12_0001.ptau
+pot12_final.ptau
+proof.json
+public.json
+witness.wtns
+spatial_shield_js/
+
+# Temp & cache
+temp_model_dir/
+geo_fence_log.json
+fingerprints.db
+fingerprints.db.json
+oracle_data.json
+input.json
+
+# Receipts (generated files)
+receipts/
+
+# Logs
+logs/
+
+# Dataset (too large for git)
+dataset/
+
+# Scripts test images
+scripts/test/
+scripts/uploads/
+scripts/active_learning_loop/uncertain/
+
+# Frontend build
+frontend/.next/

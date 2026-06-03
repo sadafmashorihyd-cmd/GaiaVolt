@@ -499,8 +499,8 @@
       ]
     },
     "D:\\Eco X\\ecox-contracts\\contracts\\QuantumLock2050.sol": {
-      "lastModificationDate": 1780245321403,
-      "contentHash": "6fb152444de14ad1f5c9d42ea7b661ae",
+      "lastModificationDate": 1780467196505,
+      "contentHash": "a23f4590a5c3b5ce0760b7c9c29abad2",
       "sourceName": "contracts/QuantumLock2050.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -532,7 +532,7 @@
       ],
       "artifacts": [
         "IERC20",
-        "QuantumLock2050"
+        "QuantumLock2050V2"
       ]
     }
   }

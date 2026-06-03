@@ -66,3 +66,11 @@ scripts/active_learning_loop/uncertain/
 
 # Frontend build
 frontend/.next/
+# Large model files
+ecox_model.h5
+ecox_model_b7_v1.h5
+ecox_model_dual.pt
+ecox_model_pruned.h5
+ecox_model_stable.h5
+ecox_model_optimized.tflite
+models/

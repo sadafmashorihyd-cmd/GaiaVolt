@@ -160,3 +160,4 @@
 2026-06-09 11:23:40,771 | VERIFIED | plantation | 0.51 | 4.05
 2026-06-09 11:24:36,580 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
 2026-06-09 11:24:55,701 | REJECTED | N/A | N/A | Low confidence (14.2%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 16:54:29,418 | REJECTED | N/A | N/A | No EXIF data — downloaded or screenshot image rejected. Take a fresh photo with your camera. | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pending', 'ocr': 'pending', 'zk': 'pending'}

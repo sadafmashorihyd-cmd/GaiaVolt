@@ -410,13 +410,31 @@ export default function VerifyPage() {
               <div style={{ fontSize: 10, letterSpacing: 3, color: "#4b5563", fontFamily: "monospace", marginBottom: 6 }}>
                 SELECT ACTIVITY:
               </div>
-              <select ref={activityRef} style={{
+              <select ref={activityRef} onChange={(e) => {
+                const COMING_SOON_MSGS = {
+                  coming_soon_led: "💡 LED Lighting coming soon! We'll verify real energy savings via smart meter data. Every watt counts! 🔋",
+                  coming_soon_cycling: "🚲 Cycling coming soon! GPS-powered proof of every km you ride for the planet. 🌍",
+                  coming_soon_solar: "☀️ Solar Panels coming soon! Real-time energy output verified on blockchain. ⚡",
+                  coming_soon_ocean: "🌊 Ocean Cleanup coming soon! Geo-tagged proof from real cleanup sites. Every piece of trash matters! 🐋",
+                  coming_soon_wind: "💨 Wind Energy coming soon! Live turbine rotation data anchored on-chain. 🌬️",
+                  coming_soon_ev: "⚡ EV Charging coming soon! Smart meter proof of every clean mile driven. 🚗",
+                  coming_soon_transit: "🚌 Public Transport coming soon! GPS-verified commute tracking for greener cities. 🗺️",
+                  coming_soon_water: "💧 Water Conservation coming soon! Smart meter integration to reward every drop saved. 🌊",
+                  coming_soon_farming: "🌾 Organic Farming coming soon! Soil sensor + GPS verification for real farmers. 🌿",
+                  coming_soon_bills: "📄 Utility Bills coming soon! AI-powered bill authentication to reward energy savers. 💚",
+                  recycling: "♻️ Recycling verification coming soon! We're building ultra fraud-proof bin detection. Every recycled item will be verified with AI + GPS. Stay tuned! 🌱",
+                };
+                if (COMING_SOON_MSGS[e.target.value]) {
+                  alert(COMING_SOON_MSGS[e.target.value]);
+                  e.target.value = "plantation";
+                }
+              }} style={{
                 width: "100%", padding: "12px 14px", borderRadius: 10,
                 background: "rgba(0,0,0,0.5)", border: "1px solid #22c55e33",
                 color: "#e2e8f0", fontSize: 13, outline: "none", cursor: "pointer",
               }}>
                 <option value="plantation">🌱 Plantation ✅</option>
-                <option value="recycling">♻️ Recycling ✅</option>
+                <option value="recycling">♻️ Recycling — Coming Soon</option>
                 <option value="coming_soon_led">💡 LED Lighting — Coming Soon</option>
                 <option value="coming_soon_cycling">🚲 Cycling — Coming Soon</option>
                 <option value="coming_soon_solar">☀️ Solar Panels — Coming Soon</option>
@@ -459,17 +477,39 @@ export default function VerifyPage() {
             <div style={{ fontSize: 10, letterSpacing: 3, color: "#4b5563", fontFamily: "monospace", marginBottom: 6 }}>
               SELECT ACTIVITY:
             </div>
-            <select ref={activityRef} style={{
+            <select ref={activityRef} onChange={(e) => {
+              const COMING_SOON_MSGS = {
+                recycling: "♻️ Recycling verification coming soon! We're building ultra fraud-proof bin detection. Every recycled item will be verified with AI + GPS. Stay tuned! 🌱",
+                led_lighting: "💡 LED Lighting coming soon! We'll verify real energy savings via smart meter data. Every watt counts! 🔋",
+                cycling: "🚲 Cycling coming soon! GPS-powered proof of every km you ride for the planet. 🌍",
+                solar_panels: "☀️ Solar Panels coming soon! Real-time energy output verified on blockchain. ⚡",
+                ocean_cleanup: "🌊 Ocean Cleanup coming soon! Geo-tagged proof from real cleanup sites. Every piece of trash matters! 🐋",
+                wind_energy: "💨 Wind Energy coming soon! Live turbine rotation data anchored on-chain. 🌬️",
+                ev_charging: "⚡ EV Charging coming soon! Smart meter proof of every clean mile driven. 🚗",
+                public_transport: "🚌 Public Transport coming soon! GPS-verified commute tracking for greener cities. 🗺️",
+                water_conservation: "💧 Water Conservation coming soon! Smart meter integration to reward every drop saved. 🌊",
+                organic_farming: "🌾 Organic Farming coming soon! Soil sensor + GPS verification for real farmers. 🌿",
+              };
+              if (COMING_SOON_MSGS[e.target.value]) {
+                alert(COMING_SOON_MSGS[e.target.value]);
+                e.target.value = "plantation";
+              }
+            }} style={{
               width: "100%", padding: "12px 14px", borderRadius: 10,
               background: "rgba(0,0,0,0.5)", border: "1px solid #22c55e33",
               color: "#e2e8f0", fontSize: 13, outline: "none", cursor: "pointer",
             }}>
-              <option value="plantation">🌱 Plantation</option>
-              <option value="recycling">♻️ Recycling</option>
-              <option value="led_lighting">💡 LED Lighting</option>
-              <option value="cycling" disabled>🚲 Cycling — Coming Soon</option>
-              <option value="solar_panels" disabled>☀️ Solar Panels — Coming Soon</option>
-              <option value="ocean_cleanup" disabled>🌊 Ocean Cleanup — Coming Soon</option>
+              <option value="plantation">🌱 Plantation ✅</option>
+              <option value="recycling">♻️ Recycling — Coming Soon</option>
+              <option value="led_lighting">💡 LED Lighting — Coming Soon</option>
+              <option value="cycling">🚲 Cycling — Coming Soon</option>
+              <option value="solar_panels">☀️ Solar Panels — Coming Soon</option>
+              <option value="ocean_cleanup">🌊 Ocean Cleanup — Coming Soon</option>
+              <option value="wind_energy">💨 Wind Energy — Coming Soon</option>
+              <option value="ev_charging">⚡ EV Charging — Coming Soon</option>
+              <option value="public_transport">🚌 Public Transport — Coming Soon</option>
+              <option value="water_conservation">💧 Water Conservation — Coming Soon</option>
+              <option value="organic_farming">🌾 Organic Farming — Coming Soon</option>
             </select>
           </div>
         )}

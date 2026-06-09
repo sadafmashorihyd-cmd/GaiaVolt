@@ -16,4 +16,7 @@ activity_locations.db
 evolution.db
 ecox_main.db
 gaiavolt_users.db
-fingerprints.db
+fingerprints.db"*.onnx" 
+"*.pb"   
+"temp_model_dir/" 
+"dataset/" 

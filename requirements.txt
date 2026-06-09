@@ -5,7 +5,7 @@ onnx==1.16.0
 onnxruntime==1.17.1
 tf2onnx==1.16.1
 safetensors==0.4.3
-opencv-python==4.9.0.80
+opencv-python-headless==4.9.0.80
 numpy==1.26.4
 absl-py==2.1.0
 h5py==3.11.0

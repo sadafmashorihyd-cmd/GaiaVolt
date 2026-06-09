@@ -1,0 +1,162 @@
+2026-06-05 11:45:03,781 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 16:31:29,467 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 16:31:44,643 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 16:31:57,500 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 16:32:22,698 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 16:32:33,216 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 16:32:44,448 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 19:49:37,717 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 19:49:58,294 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:20:25,518 | REJECTED | N/A | N/A | No LED light detected — show it clearly lit. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-05 20:22:10,726 | REJECTED | N/A | N/A | Low confidence (33.7%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-05 20:23:03,962 | REJECTED | N/A | N/A | No LED light detected — show it clearly lit. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-05 20:24:37,233 | REJECTED | N/A | N/A | Low confidence (41.6%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-05 20:25:00,238 | REJECTED | N/A | N/A | Cooldown active! Wait 110 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-05 20:26:30,391 | REJECTED | N/A | N/A | Video too short (3.2s) — minimum 4s required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-05 20:26:38,717 | REJECTED | N/A | N/A | Video too short (3.2s) — minimum 4s required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-05 20:26:53,352 | REJECTED | N/A | N/A | Cooldown active! Wait 108 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-05 20:28:08,844 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:28:25,268 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:28:42,000 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:39:41,494 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:41:22,109 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:41:38,297 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:41:52,406 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:44:45,654 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:45:00,411 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 20:45:14,769 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 21:19:59,373 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-05 21:20:12,985 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-06 11:07:12,248 | REJECTED | N/A | N/A | Low confidence (54.8%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-06 11:08:35,875 | REJECTED | N/A | N/A | Show yourself installing/switching on the LED. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 11:12:19,000 | REJECTED | N/A | N/A | Low confidence (50.2%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-06 11:12:53,982 | REJECTED | N/A | N/A | Low confidence (27.0%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-06 11:16:19,496 | REJECTED | N/A | N/A | Show yourself installing/switching on the LED. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 11:25:21,203 | REJECTED | N/A | N/A | Stock footage or looped video detected — live real-time recycling required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 11:27:43,262 | REJECTED | N/A | N/A | Low confidence (38.7%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-06 11:30:32,857 | REJECTED | N/A | N/A | No disposal action detected — show item going INTO the recycling bin. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 11:49:14,092 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-06 12:07:05,892 | REJECTED | N/A | N/A | Insufficient activity — show complete process: digging + seed + covering soil. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 12:08:14,815 | REJECTED | N/A | N/A | Insufficient activity — show complete process: digging + seed + covering soil. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 17:45:41,832 | REJECTED | N/A | N/A | Video too short (3.4s) — minimum 8s required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 19:54:22,421 | REJECTED | N/A | N/A | AI-generated or edited image detected — real camera required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 19:56:06,403 | REJECTED | N/A | N/A | Low confidence (14.2%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-06 19:56:30,462 | REJECTED | N/A | N/A | No LED light detected — show bulb clearly lit and bright. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 19:56:55,937 | REJECTED | N/A | N/A | No LED light detected — show bulb clearly lit and bright. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 19:57:32,181 | REJECTED | N/A | N/A | No LED light detected — show bulb clearly lit and bright. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 19:57:46,138 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 19:58:14,216 | REJECTED | N/A | N/A | No LED light detected — show bulb clearly lit and bright. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-06 21:27:11,477 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-06 21:27:40,782 | REJECTED | N/A | N/A | Low confidence (22.9%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-07 09:09:19,215 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-07 09:10:24,646 | REJECTED | N/A | N/A | Video too short for 3-phase analysis | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 09:11:47,161 | REJECTED | N/A | N/A | Video too short for 3-phase analysis | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 09:13:24,875 | REJECTED | N/A | N/A | Video too short for 3-phase analysis | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 09:24:52,506 | REJECTED | N/A | N/A | Video too short | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 09:26:17,398 | REJECTED | N/A | N/A | Video too short | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 09:34:08,849 | VERIFIED | plantation | 0.46 | 3.78
+2026-06-07 09:37:52,943 | REJECTED | N/A | N/A | Cooldown active! Wait 43196 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 10:42:32,357 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-07 11:21:34,784 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-07 14:53:42,415 | REJECTED | N/A | N/A | Video too short (1.3s) — minimum 5s required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 14:55:40,245 | VERIFIED | plantation | 0.41 | 3.54
+2026-06-07 15:07:11,128 | REJECTED | N/A | N/A | Cooldown active! Wait 42866 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 15:15:01,799 | REJECTED | N/A | N/A | Low confidence (17.4%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-07 15:23:31,641 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 15:23:31,679 | VERIFIED | plantation | 0.46 | 3.78
+2026-06-07 15:46:03,581 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-07 15:55:11,275 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-07 18:22:51,500 | REJECTED | N/A | N/A | Low confidence (22.6%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-07 18:23:13,848 | REJECTED | N/A | N/A | Low confidence (22.6%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-07 18:23:53,479 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-07 19:19:40,334 | REJECTED | N/A | N/A | Cooldown active! Wait 42963 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 19:20:41,201 | REJECTED | N/A | N/A | Cooldown active! Wait 42962 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 19:21:11,170 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-07 19:24:55,664 | REJECTED | N/A | N/A | Cooldown active! Wait 42958 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 19:33:02,479 | VERIFIED | plantation | 0.44 | 3.68
+2026-06-07 19:35:47,685 | REJECTED | N/A | N/A | Cooldown active! Wait 43197 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-07 22:13:08,837 | REJECTED | N/A | N/A | Low confidence (14.1%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-07 23:59:34,084 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 11:38:09,737 | VERIFIED | plantation | 0.62 | 4.6
+2026-06-08 11:41:48,628 | REJECTED | N/A | N/A | Cooldown active! Wait 42231 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 11:43:08,940 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 11:47:04,223 | VERIFIED | plantation | 0.50 | 4.02
+2026-06-08 11:48:52,701 | REJECTED | N/A | N/A | Cooldown active! Wait 43198 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 11:49:08,332 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 11:49:41,040 | REJECTED | N/A | N/A | Cooldown active! Wait 43197 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 11:49:57,785 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 11:50:33,048 | VERIFIED | plantation | 0.43 | 3.63
+2026-06-08 11:51:26,690 | REJECTED | N/A | N/A | Duplicate image! User banned! | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'fail', 'ocr': 'fail', 'zk': 'fail'}
+2026-06-08 11:52:58,471 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 11:54:17,038 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 12:41:16,822 | VERIFIED | plantation | 0.41 | 3.53
+2026-06-08 12:42:39,546 | REJECTED | N/A | N/A | Cooldown active! Wait 43144 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 12:43:46,611 | REJECTED | N/A | N/A | Cooldown active! Wait 43143 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 13:09:45,668 | VERIFIED | plantation | 0.76 | 5.3
+2026-06-08 13:59:25,117 | VERIFIED | plantation | 0.49 | 3.94
+2026-06-08 13:59:49,064 | REJECTED | N/A | N/A | Low confidence (22.8%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 14:00:42,795 | REJECTED | N/A | N/A | Low confidence (22.8%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 14:01:27,353 | REJECTED | N/A | N/A | Cooldown active! Wait 43148 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:01:41,508 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:02:16,635 | REJECTED | N/A | N/A | Cooldown active! Wait 43147 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:02:46,279 | REJECTED | N/A | N/A | Cooldown active! Wait 43146 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:03:03,462 | REJECTED | N/A | N/A | Cooldown active! Wait 43146 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:03:20,604 | REJECTED | N/A | N/A | Cooldown active! Wait 43146 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:04:02,164 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 14:04:35,055 | REJECTED | N/A | N/A | Screen recording detected (Moiré pattern) — real camera required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:18:30,524 | REJECTED | N/A | N/A | Cooldown active! Wait 43131 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 14:23:09,174 | VERIFIED | plantation | 0.95 | 6.23
+2026-06-08 16:00:50,895 | REJECTED | N/A | N/A | Cooldown active! Wait 43102 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 16:01:13,339 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 16:02:39,207 | REJECTED | N/A | N/A | Cooldown active! Wait 43100 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 16:03:10,298 | REJECTED | N/A | N/A | Cooldown active! Wait 43099 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 16:03:49,593 | REJECTED | N/A | N/A | Cooldown active! Wait 43099 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 17:28:00,662 | VERIFIED | plantation | 0.32 | 3.09
+2026-06-08 17:54:56,386 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 17:57:52,696 | REJECTED | N/A | N/A | Cooldown active! Wait 43170 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 17:58:09,222 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 17:58:55,885 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 17:59:55,140 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 18:00:44,531 | REJECTED | N/A | N/A | Cooldown active! Wait 43167 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 18:01:41,497 | REJECTED | N/A | N/A | Cooldown active! Wait 43166 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 18:02:04,341 | REJECTED | N/A | N/A | Duplicate video detected — same video cannot be reused! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 18:04:26,871 | REJECTED | N/A | N/A | Cooldown active! Wait 43163 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 18:05:57,112 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 18:07:24,011 | REJECTED | N/A | N/A | Cooldown active! Wait 43160 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-08 18:15:52,918 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 18:16:53,606 | REJECTED | N/A | N/A | Security: AI-generated video detected — no camera sensor noise | {'spatial': 'pass', 'liveness': 'fail', 'ai': 'pass', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-08 18:21:52,077 | VERIFIED | plantation | 0.53 | 4.16
+2026-06-08 18:26:15,572 | VERIFIED | plantation | 0.91 | 6.03
+2026-06-09 09:38:38,060 | VERIFIED | plantation | 0.65 | 4.73
+2026-06-09 10:01:46,078 | VERIFIED | plantation | 0.31 | 3.07
+2026-06-09 10:05:55,642 | VERIFIED | plantation | 0.45 | 3.76
+2026-06-09 10:06:22,612 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:06:41,192 | REJECTED | N/A | N/A | Cooldown active! Wait 0 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:06:50,770 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:07:01,516 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:07:22,444 | VERIFIED | plantation | 0.56 | 4.28
+2026-06-09 10:07:58,979 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:08:41,212 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:09:07,233 | REJECTED | N/A | N/A | Video too short (3.8s) — minimum 5s required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:10:09,556 | VERIFIED | plantation | 0.43 | 3.66
+2026-06-09 10:10:35,069 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:10:53,253 | REJECTED | N/A | N/A | Low confidence (12.9%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 10:28:44,521 | REJECTED | N/A | N/A | Low confidence (38.4%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 10:29:20,186 | REJECTED | N/A | N/A | Low confidence (38.4%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 10:30:35,680 | REJECTED | N/A | N/A | Cooldown active! Wait 1416 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:37:42,759 | REJECTED | N/A | N/A | Cooldown active! Wait 1409 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:40:18,707 | REJECTED | N/A | N/A | Video too short (4.2s) — minimum 5s required. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:41:26,788 | REJECTED | N/A | N/A | Low confidence (40.6%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 10:42:17,889 | REJECTED | N/A | N/A | Cooldown active! Wait 1405 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:43:14,246 | REJECTED | N/A | N/A | Low confidence (22.6%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 10:44:00,587 | REJECTED | N/A | N/A | Low confidence (27.3%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 10:44:54,123 | REJECTED | N/A | N/A | Cooldown active! Wait 1405 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 10:59:58,866 | VERIFIED | plantation | 0.64 | 4.68
+2026-06-09 11:01:32,419 | REJECTED | N/A | N/A | Low confidence (29.6%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 11:15:14,544 | REJECTED | N/A | N/A | Low confidence (34.3%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 11:16:43,940 | REJECTED | N/A | N/A | Low confidence (30.5%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 11:19:03,874 | REJECTED | N/A | N/A | Low confidence (34.7%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}
+2026-06-09 11:19:38,545 | REJECTED | N/A | N/A | Cooldown active! Wait 1420 more minutes. | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 11:23:40,771 | VERIFIED | plantation | 0.51 | 4.05
+2026-06-09 11:24:36,580 | REJECTED | N/A | N/A | Duplicate video — cannot reuse! | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'pass', 'ocr': 'fail', 'zk': 'pending'}
+2026-06-09 11:24:55,701 | REJECTED | N/A | N/A | Low confidence (14.2%) | {'spatial': 'pass', 'liveness': 'pass', 'ai': 'fail', 'ocr': 'pending', 'zk': 'pending'}

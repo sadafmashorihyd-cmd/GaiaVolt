@@ -330,6 +330,6 @@ contract EcoCoin is ERC20, ERC20Burnable, Ownable2Step, ReentrancyGuard, Pausabl
         uint256 burnAmount = (value * BURN_TAX_BPS) / BPS_DENOMINATOR;
         uint256 sendAmount = value - burnAmount;
         _burn(from, burnAmount);
-        super._update(from, to, sendAmount);
+        super._update(from, to, sendAmount);a
     }
 }

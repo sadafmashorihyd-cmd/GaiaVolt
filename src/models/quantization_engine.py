@@ -13,7 +13,7 @@ def convert_to_tflite():
     
     # Converter mein concrete function pass karein
     converter = tf.lite.TFLiteConverter.from_concrete_functions([concrete_func])
-    converter.optimizations = [tf.lite.Optimize.DEFAULT]
+    converter.optimizations = [tf.lite.Optimize.DEaFAULT]
     
     tflite_model = converter.convert()
     

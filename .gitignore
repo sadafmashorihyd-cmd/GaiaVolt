@@ -8,3 +8,12 @@ fraud_attempts.log
 *.h5 
 *.tflite 
 *.pt 
+*.db
+receipts/
+rejection_logs.log
+dataset/uploads/
+activity_locations.db
+evolution.db
+ecox_main.db
+gaiavolt_users.db
+fingerprints.db

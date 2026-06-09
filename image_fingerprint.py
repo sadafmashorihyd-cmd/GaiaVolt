@@ -64,7 +64,7 @@ class ImageFingerprinter:
         print(f"{'='*55}\n")
 
     def _init_db(self):
-        self.conn = sqlite3.connect(FINGERPRINT_DB)
+        self.conn = sqlite3.connect(FINGERPRINT_DB, check_same_thread=False)
         self.conn.execute("PRAGMA journal_mode=WAL")
 
         self.conn.execute("""

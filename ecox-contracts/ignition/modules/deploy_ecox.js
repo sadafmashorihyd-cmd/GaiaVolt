@@ -5,6 +5,6 @@ module.exports = buildModule("EcoXModule", (m) => {
     const deployer = m.getAccount(0);
 
     const ecoCoin = m.contract("EcoCoin", [deployer]);
-
+a
     return { ecoCoin };
 });

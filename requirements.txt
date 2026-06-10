@@ -1,5 +1,4 @@
-tensorflow==2.17.0
-
+tensorflow>=2.15.0
 torch==2.3.0
 torchvision==0.18.0
 onnxruntime==1.17.1

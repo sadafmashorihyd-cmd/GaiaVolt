@@ -20,3 +20,7 @@ fingerprints.db"*.onnx"
 "*.pb"   
 "temp_model_dir/" 
 "dataset/" 
+src/ 
+dataset/ 
+temp_model_dir/ 
+training/ 

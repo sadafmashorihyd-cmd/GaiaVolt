@@ -24,3 +24,11 @@ src/
 dataset/ 
 temp_model_dir/ 
 training/ 
+scripts/ 
+logs/ 
+ecox-contracts/artifacts/ 
+ecox-contracts/cache/ 
+*.ptau 
+*.wasm 
+*.wtns 
+*.onnx 

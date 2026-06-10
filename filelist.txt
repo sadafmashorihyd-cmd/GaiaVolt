@@ -1,0 +1,452 @@
+.gitignore
+activity_locations.db
+activity_proof_engine.py
+anti_cheat.py
+app.py
+assets/confusion_matrix.png
+assets/distribution_report.png
+assets/ecox_cyberpunk_scan.jpg
+assets/ecox_gradcam_cycling.jpg
+assets/ecox_gradcam_solar_panels.jpg
+assets/ecox_gradcam_utility_bills.jpg
+assets/logo.png
+assets/verify.png
+audit_receipt.py
+auth_system.py
+balance_dataset.py
+brain_test.py
+bridges.db
+bridges_engine.py
+check_db.py
+check_engine.py
+check_wallet.py
+convert_to_edge.py
+convert_to_onnx.py
+create_model.py
+day21_impact_engine.py
+day21_orchestrator.py
+day21_web3_bridge.py
+day22_paymaster.py
+day23_pipeline.py
+distribution_report.png
+Dockerfile
+document_expert.py
+download_images.py
+downsampling_engine.py
+dual_framework_config.py
+ecox-contracts/.gitignore
+ecox-contracts/ai_listener.py
+ecox-contracts/artifacts/@openzeppelin/contracts/access/Ownable.sol/Ownable.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/access/Ownable.sol/Ownable.json
+ecox-contracts/artifacts/@openzeppelin/contracts/access/Ownable2Step.sol/Ownable2Step.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/access/Ownable2Step.sol/Ownable2Step.json
+ecox-contracts/artifacts/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC1155Errors.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC1155Errors.json
+ecox-contracts/artifacts/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC20Errors.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC20Errors.json
+ecox-contracts/artifacts/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC721Errors.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC721Errors.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/ERC20.sol/ERC20.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/ERC20.sol/ERC20.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol/ERC20Burnable.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol/ERC20Burnable.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/IERC20.sol/IERC20.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/token/ERC20/IERC20.sol/IERC20.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/Context.sol/Context.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/Context.sol/Context.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/Pausable.sol/Pausable.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/Pausable.sol/Pausable.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/ReentrancyGuard.sol/ReentrancyGuard.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/ReentrancyGuard.sol/ReentrancyGuard.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/StorageSlot.sol/StorageSlot.dbg.json
+ecox-contracts/artifacts/@openzeppelin/contracts/utils/StorageSlot.sol/StorageSlot.json
+ecox-contracts/artifacts/build-info/331a95855985a001e598a7821b7fdcb8.json
+ecox-contracts/artifacts/build-info/3581d2a4fd4fe1c21841e680a4603707.json
+ecox-contracts/artifacts/build-info/52f8f951c25e9aebddf0a07d09f7aae6.json
+ecox-contracts/artifacts/build-info/604411b5dce36f0fca9289baf6f8a195.json
+ecox-contracts/artifacts/contracts/EcoCoin.sol/EcoCoin.dbg.json
+ecox-contracts/artifacts/contracts/EcoCoin.sol/EcoCoin.json
+ecox-contracts/artifacts/contracts/EcoCoin.sol/IQuantumLock.dbg.json
+ecox-contracts/artifacts/contracts/EcoCoin.sol/IQuantumLock.json
+ecox-contracts/artifacts/contracts/EcoCoin.sol/IZkVerifier.dbg.json
+ecox-contracts/artifacts/contracts/EcoCoin.sol/IZkVerifier.json
+ecox-contracts/artifacts/contracts/EcoXPaymaster.sol/EcoXPaymaster.dbg.json
+ecox-contracts/artifacts/contracts/EcoXPaymaster.sol/EcoXPaymaster.json
+ecox-contracts/artifacts/contracts/EcoXPaymaster.sol/IEntryPoint.dbg.json
+ecox-contracts/artifacts/contracts/EcoXPaymaster.sol/IEntryPoint.json
+ecox-contracts/artifacts/contracts/QuantumLock2050.sol/IERC20.dbg.json
+ecox-contracts/artifacts/contracts/QuantumLock2050.sol/IERC20.json
+ecox-contracts/artifacts/contracts/QuantumLock2050.sol/QuantumLock2050V2.dbg.json
+ecox-contracts/artifacts/contracts/QuantumLock2050.sol/QuantumLock2050V2.json
+ecox-contracts/cache/.hardhat-network-instances.json
+ecox-contracts/cache/solidity-files-cache.json
+ecox-contracts/contracts/__init__.py
+ecox-contracts/contracts/ai_decision.txt
+ecox-contracts/contracts/ai_node_bridge.py
+ecox-contracts/contracts/EcoCoin.sol
+ecox-contracts/contracts/EcoXPaymaster.sol
+ecox-contracts/contracts/exploit_simulation.py
+ecox-contracts/contracts/fingerprints.db
+ecox-contracts/contracts/QuantumLock2050.sol
+ecox-contracts/contracts/save_to_db.py
+ecox-contracts/contracts/security_engine.py
+ecox-contracts/contracts/setup_db.py
+ecox-contracts/contracts/test.png
+ecox-contracts/hardhat.config.js
+ecox-contracts/ignition/deployments/chain-80002/artifacts/QuantumLock2050V2Module#QuantumLock2050V2.dbg.json
+ecox-contracts/ignition/deployments/chain-80002/artifacts/QuantumLock2050V2Module#QuantumLock2050V2.json
+ecox-contracts/ignition/deployments/chain-80002/build-info/3581d2a4fd4fe1c21841e680a4603707.json
+ecox-contracts/ignition/deployments/chain-80002/journal.jsonl
+ecox-contracts/ignition/modules/deploy_ecox.js
+ecox-contracts/ignition/modules/deploy_paymaster.js
+ecox-contracts/ignition/modules/deploy_quantum_lock.js
+ecox-contracts/ignition/modules/EcoCoinDeploy.js
+ecox-contracts/ignition/modules/Lock.js
+ecox-contracts/initialize_oracle.js
+ecox-contracts/package-lock.json
+ecox-contracts/package.json
+ecox-contracts/README.md
+ecox-contracts/server.py
+ecox-contracts/test_encryption.py
+ecox-contracts/test_hash.py
+ecox-contracts/test_integrity.py
+ecox-contracts/test_signal.py
+ecox_cyberpunk_scan.jpg
+ecox_gradcam_cycling.jpg
+ecox_gradcam_solar_panels.jpg
+ecox_gradcam_utility_bills.jpg
+ecox_heatmap_result.jpg
+ecox_main.db
+ecox_model_final.onnx
+edge_predictor.py
+encryption_engine.py
+evolution.db
+evolution.db-shm
+evolution.db-wal
+evolution_engine.py
+exploit_simulation.py
+fingerprints.db
+fingerprints.db-shm
+fingerprints.db-wal
+fingerprints.db.json
+fresh_photo_check.py
+frontend/.env.local
+frontend/.gitignore
+frontend/AGENTS.md
+frontend/app/auth/page.jsx
+frontend/app/bridges/page.jsx
+frontend/app/EcoGlobe.tsx
+frontend/app/evolution/page.jsx
+frontend/app/favicon.ico
+frontend/app/globals.css
+frontend/app/layout.tsx
+frontend/app/nfts/page.jsx
+frontend/app/page.tsx
+frontend/app/ServiceWorker.tsx
+frontend/app/verify/page.jsx
+frontend/CLAUDE.md
+frontend/components.json
+frontend/components/ui/button.tsx
+frontend/eslint.config.mjs
+frontend/lib/utils.ts
+frontend/next-env.d.ts
+frontend/next.config.ts
+frontend/npm
+frontend/package-lock.json
+frontend/package.json
+frontend/postcss.config.mjs
+frontend/public/earth.jpg
+frontend/public/file.svg
+frontend/public/globe.svg
+frontend/public/icon-192.png
+frontend/public/icon-512.png
+frontend/public/manifest.json
+frontend/public/next.svg
+frontend/public/sw.js
+frontend/public/vercel.svg
+frontend/public/window.svg
+frontend/README.md
+frontend/src/constants/index.ts
+frontend/src/services/api.ts
+frontend/tsconfig.json
+gaiavolt_users.db
+geo_fence.py
+geo_fence_log.json
+gradcam_engine.py
+image_fingerprint.py
+input.json
+ipfs_manager.py
+LICENSE
+logs/ai_node_bridge.log
+logs/audit.key
+logs/audit_trail.enc
+logs/audit_trail.jsonl
+logs/ipfs_backup/ecox_e3dc8086_Sadaf.enc
+logs/ipfs_backup/ecox_e3dc8086_Sadaf.enc.meta.json
+logs/oracle_bridge.log
+main.py
+maintenance.json
+model_wrapper.py
+nft_engine.py
+nfts.db
+ocr_engine.py
+oracle_data.json
+oracle_integration.py
+package-lock.json
+package.json
+plantation.db
+plantation_tracker.py
+pot12_0000.ptau
+pot12_0001.ptau
+pot12_final.ptau
+predict_ecox.py
+proof.json
+public.json
+python
+README.md
+receipt_monitor.py
+rejection_logs.log
+requirements.lock
+requirements.txt
+run_eval.py
+run_training.py
+runtime.txt
+scripts/active_learning_loop/active_loop.py
+scripts/active_learning_loop/address_mismatch_test_bill_2026.jpeg
+scripts/active_learning_loop/uncertain/uncertain_23pct_20260528_103112_image_86.jpg
+scripts/active_learning_loop/uncertain/uncertain_36pct_20260528_103111_image_84.jpg
+scripts/active_learning_loop/uncertain/uncertain_37pct_20260528_103050_image_79.jpg
+scripts/active_learning_loop/uncertain/uncertain_39pct_20260528_103054_image_90.jpg
+scripts/active_learning_loop/uncertain/uncertain_39pct_20260528_103117_image_199.jpg
+scripts/active_learning_loop/uncertain/uncertain_42pct_20260528_103121_image_67.png
+scripts/active_learning_loop/uncertain/uncertain_43pct_20260528_103103_image_95.jpg
+scripts/active_learning_loop/uncertain/uncertain_43pct_20260528_103119_image_205.jpg
+scripts/active_learning_loop/uncertain/uncertain_48pct_20260528_103035_images (78).jpg
+scripts/active_learning_loop/uncertain/uncertain_48pct_20260528_103123_image_71.jpg
+scripts/active_learning_loop/uncertain/uncertain_48pct_20260528_103124_image_76.jpg
+scripts/active_learning_loop/uncertain/uncertain_50pct_20260528_103054_image_88.jpg
+scripts/active_learning_loop/uncertain/uncertain_53pct_20260528_103128_image_191.jpg
+scripts/active_learning_loop/uncertain/uncertain_53pct_20260528_103201_image_74.jpg
+scripts/active_learning_loop/uncertain/uncertain_54pct_20260528_103051_image_82.jpg
+scripts/active_learning_loop/uncertain/uncertain_54pct_20260528_103128_image_193.png
+scripts/active_learning_loop/uncertain/uncertain_61pct_20260528_103106_image_73.jpg
+scripts/active_learning_loop/uncertain/uncertain_63pct_20260528_103115_image_193.jpg
+scripts/active_learning_loop/uncertain/uncertain_64pct_20260528_103048_image_75.jpg
+scripts/active_learning_loop/uncertain/uncertain_64pct_20260528_103136_image_200.jpg
+scripts/active_learning_loop/uncertain/uncertain_65pct_20260528_103049_image_78.jpg
+scripts/active_learning_loop/uncertain/uncertain_65pct_20260528_103140_image_203.jpg
+scripts/active_learning_loop/uncertain/uncertain_65pct_20260528_103210_image_90.png
+scripts/active_learning_loop/uncertain/uncertain_66pct_20260528_103045_image_68.jpg
+scripts/active_learning_loop/uncertain/uncertain_66pct_20260528_103122_image_69.jpg
+scripts/active_learning_loop/uncertain/uncertain_66pct_20260528_103218_image_97.jpg
+scripts/active_learning_loop/uncertain/uncertain_71pct_20260528_103042_image_61.jpg
+scripts/active_learning_loop/uncertain/uncertain_72pct_20260528_103113_image_190.jpg
+scripts/active_learning_loop/uncertain/uncertain_72pct_20260528_103116_image_196.jpg
+scripts/active_learning_loop/uncertain/uncertain_73pct_20260528_103100_image_89.jpg
+scripts/active_learning_loop/uncertain/uncertain_74pct_20260528_103055_image_92.jpg
+scripts/active_learning_loop/uncertain/uncertain_74pct_20260528_103117_image_201.jpg
+scripts/active_learning_loop/uncertain/uncertain_74pct_20260528_103123_image_70.png
+scripts/active_learning_loop/uncertain/uncertain_74pct_20260528_103204_image_78.png
+scripts/active_learning_loop/uncertain/uncertain_75pct_20260528_103158_image_65.jpg
+scripts/active_learning_loop/uncertain/uncertain_75pct_20260528_103158_image_67.jpg
+scripts/active_learning_loop/uncertain/uncertain_76pct_20260528_103204_image_77.jpg
+scripts/active_learning_loop/uncertain/uncertain_78pct_20260528_103103_image_94.jpg
+scripts/active_learning_loop/uncertain/uncertain_78pct_20260528_103109_image_80.jpg
+scripts/active_learning_loop/uncertain/uncertain_78pct_20260528_103111_image_83.jpg
+scripts/active_learning_loop/uncertain/uncertain_78pct_20260528_103120_image_207.jpg
+scripts/active_learning_loop/uncertain/uncertain_78pct_20260528_103207_image_84.png
+scripts/active_learning_loop/uncertain/uncertain_79pct_20260528_103142_image_204.jpg
+scripts/active_learning_loop/uncertain/uncertain_82pct_20260528_103111_image_85.jpg
+scripts/active_learning_loop/uncertain/uncertain_82pct_20260528_103120_image_208.jpg
+scripts/active_learning_loop/uncertain/uncertain_82pct_20260528_103128_image_192.jpg
+scripts/active_learning_loop/uncertain/uncertain_83pct_20260528_103115_image_194.jpg
+scripts/active_learning_loop/uncertain/uncertain_83pct_20260528_103119_image_206.jpg
+scripts/address_mismatch_test_bill_2026.jpeg
+scripts/audit_dataset.py
+scripts/augmentation_logic.py
+scripts/data_auditor.py
+scripts/data_loader.py
+scripts/images (84).jpg
+scripts/metadata_extractor.py
+scripts/metadata_generator.py
+scripts/new_test.jpg
+scripts/preprocessing.py
+scripts/real_test.jpg
+scripts/test/cycling/download (1).jpg
+scripts/test/cycling/download (10).jpg
+scripts/test/cycling/download (11).jpg
+scripts/test/cycling/download (2).jpg
+scripts/test/cycling/download (3).jpg
+scripts/test/cycling/download (7).jpg
+scripts/test/cycling/download (9).jpg
+scripts/test/cycling/images (10).jpg
+scripts/test/cycling/images (11).jpg
+scripts/test/cycling/images (13).jpg
+scripts/test/cycling/images (15).jpg
+scripts/test/cycling/images (16).jpg
+scripts/test/cycling/images (23).jpg
+scripts/test/cycling/images (26).jpg
+scripts/test/cycling/images (33).jpg
+scripts/test/cycling/images (38).jpg
+scripts/test/cycling/images (40).jpg
+scripts/test/cycling/images (42).jpg
+scripts/test/cycling/images (46).jpg
+scripts/test/cycling/images (48).jpg
+scripts/test/cycling/images (49).jpg
+scripts/test/cycling/images (50).jpg
+scripts/test/cycling/images (54).jpg
+scripts/test/cycling/images (57).jpg
+scripts/test/cycling/images (59).jpg
+scripts/test/cycling/images (6).jpg
+scripts/test/cycling/images (65).jpg
+scripts/test/cycling/images (66).jpg
+scripts/test/cycling/images (7).jpg
+scripts/test/cycling/images (70).jpg
+scripts/test/cycling/images (73).jpg
+scripts/test/cycling/images (77).jpg
+scripts/test/cycling/images (79).jpg
+scripts/test/cycling/images (81).jpg
+scripts/test/cycling/images (84).jpg
+scripts/test/cycling/images (85).jpg
+scripts/test/cycling/images (87).jpg
+scripts/test/cycling/images (89).jpg
+scripts/test/cycling/images (9).jpg
+scripts/test/cycling/images (90).jpg
+scripts/test/solar_panels/download (1).jpg
+scripts/test/solar_panels/download (13).jpg
+scripts/test/solar_panels/download (3).jpg
+scripts/test/solar_panels/download (7).jpg
+scripts/test/solar_panels/download.jpg
+scripts/test/solar_panels/images (10).jpg
+scripts/test/solar_panels/images (13).jpg
+scripts/test/solar_panels/images (16).jpg
+scripts/test/solar_panels/images (17).jpg
+scripts/test/solar_panels/images (18).jpg
+scripts/test/solar_panels/images (19).jpg
+scripts/test/solar_panels/images (20).jpg
+scripts/test/solar_panels/images (21).jpg
+scripts/test/solar_panels/images (23).jpg
+scripts/test/solar_panels/images (25).jpg
+scripts/test/solar_panels/images (34).jpg
+scripts/test/solar_panels/images (4).jpg
+scripts/test/solar_panels/images (41).jpg
+scripts/test/solar_panels/images (42).jpg
+scripts/test/solar_panels/images (43).jpg
+scripts/test/solar_panels/images (5).jpg
+scripts/test/solar_panels/images (52).jpg
+scripts/test/solar_panels/images (54).jpg
+scripts/test/solar_panels/images (57).jpg
+scripts/test/solar_panels/images (58).jpg
+scripts/test/solar_panels/images (6).jpg
+scripts/test/solar_panels/images (62).jpg
+scripts/test/solar_panels/images (64).jpg
+scripts/test/solar_panels/images (67).jpg
+scripts/test/solar_panels/images (70).jpg
+scripts/test/solar_panels/images (71).jpg
+scripts/test/solar_panels/images (75).jpg
+scripts/test/solar_panels/images (76).jpg
+scripts/test/solar_panels/images (77).jpg
+scripts/test/solar_panels/images (78).jpg
+scripts/test/solar_panels/images (79).jpg
+scripts/test/solar_panels/images (8).jpg
+scripts/test/solar_panels/images (80).jpg
+scripts/test/solar_panels/images (81).jpg
+scripts/test/utility_bills/image_10 (1).jpg
+scripts/test/utility_bills/image_11 (1).jpg
+scripts/test/utility_bills/image_11 (2).jpg
+scripts/test/utility_bills/image_12 (1).jpg
+scripts/test/utility_bills/image_13 (2).jpg
+scripts/test/utility_bills/image_14.jpg
+scripts/test/utility_bills/image_14.png
+scripts/test/utility_bills/image_15 (2).jpg
+scripts/test/utility_bills/image_16 (1).jpg
+scripts/test/utility_bills/image_17 (2).jpg
+scripts/test/utility_bills/image_19 (1).jpg
+scripts/test/utility_bills/image_19 (2).jpg
+scripts/test/utility_bills/image_19.jpg
+scripts/test/utility_bills/image_22 (2).jpg
+scripts/test/utility_bills/image_23 (1).jpg
+scripts/test/utility_bills/image_23.png
+scripts/test/utility_bills/image_25 (1).jpg
+scripts/test/utility_bills/image_25.jpg
+scripts/test/utility_bills/image_28.png
+scripts/test/utility_bills/image_29 (2).jpg
+scripts/test/utility_bills/image_29.jpg
+scripts/test/utility_bills/image_3 (2).jpg
+scripts/test/utility_bills/image_31 (2).jpg
+scripts/test/utility_bills/image_34.jpg
+scripts/test/utility_bills/image_35 (2).jpg
+scripts/test/utility_bills/image_38 (1).jpg
+scripts/test/utility_bills/image_39.jpg
+scripts/test/utility_bills/image_4.jpg
+scripts/test/utility_bills/image_40.png
+scripts/test/utility_bills/image_41 (1).jpg
+scripts/test/utility_bills/image_41.jpg
+scripts/test/utility_bills/image_42 (1).jpg
+scripts/test/utility_bills/image_42.jpg
+scripts/test/utility_bills/image_43.jpg
+scripts/test/utility_bills/image_45 (1).jpg
+scripts/test/utility_bills/image_45.jpg
+scripts/test/utility_bills/image_46.jpg
+scripts/test/utility_bills/image_48.jpg
+scripts/test/utility_bills/image_48.png
+scripts/test/utility_bills/image_49 (1).jpg
+scripts/test/utility_bills/image_5 (1).jpg
+scripts/test/utility_bills/image_5.jpg
+scripts/test/utility_bills/image_50.jpg
+scripts/test/utility_bills/image_51.jpg
+scripts/test/utility_bills/image_52.jpg
+scripts/test/utility_bills/image_53 (1).jpg
+scripts/test/utility_bills/image_54 (1).jpg
+scripts/test/utility_bills/image_54.jpg
+scripts/test/utility_bills/image_56.jpg
+scripts/test/utility_bills/image_59.jpg
+scripts/test/utility_bills/image_69.jpg
+scripts/test/utility_bills/image_7 (1).jpg
+scripts/test/utility_bills/image_7 (2).jpg
+scripts/test/utility_bills/image_70.jpg
+scripts/test/utility_bills/image_71.jpg
+scripts/test/utility_bills/image_72.jpg
+scripts/test/utility_bills/image_73.jpg
+scripts/test/utility_bills/image_74.jpg
+scripts/test/utility_bills/image_75.jpg
+scripts/test/utility_bills/image_77.jpg
+scripts/test/utility_bills/image_78.jpg
+scripts/test/utility_bills/image_8 (1).jpg
+scripts/test/utility_bills/image_8 (2).jpg
+scripts/test/utility_bills/image_8.jpg
+scripts/test/utility_bills/test_bill_2026.jpg
+scripts/uploads/laptop_photo.jpg.jpg
+scripts/uploads/new_test.jpg
+scripts/uploads/real_test.jpg
+scripts/validation_split.py
+security_hardening.py
+seed_qr_system.py
+seeds.db
+show_fake.py
+show_real.py
+smart_predict.py
+spatial_guard.sym
+spatial_shield.circom
+spatial_shield.py
+spatial_shield.r1cs
+spatial_shield.sym
+spatial_shield_0000.zkey
+spatial_shield_js/generate_witness.js
+spatial_shield_js/spatial_shield.wasm
+spatial_shield_js/witness_calculator.js
+test_api.py
+test_augmentation.py
+test_connection.py
+test_integration.py
+test_offline.py
+test_spoof.py
+user_identity.py
+verify_bridge.py
+victory_demo.py
+video_proof_engine.py
+visualize_ai.py
+witness.wtns
+zk_proof_engine.py

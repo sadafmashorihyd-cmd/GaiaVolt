@@ -235,9 +235,7 @@ def get_model():
     return model
 
 # ── Pre-load model at startup — phone timeout fix ─────────────────────────────
-print("🧠 Pre-loading AI model...")
-get_model()
-print("✅ AI model ready — fast response guaranteed!")
+print("🧠 AI model lazy loading enabled (loads on first request)")
 
 # ── SQLite DB ─────────────────────────────────────────────────────────────────
 import sqlite3 as _sqlite3

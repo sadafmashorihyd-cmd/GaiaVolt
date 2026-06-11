@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useCallback, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 async function sha256(file) {
@@ -8,7 +9,6 @@ async function sha256(file) {
   return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
-// ── Get auth token from localStorage ─────────────────────────────────────────
 function getAuthToken() {
   if (typeof window === "undefined") return null;
   return localStorage.getItem("gv_token") || null;
@@ -137,7 +137,8 @@ function ResultCard({ result }) {
 }
 
 export default function VerifyPage() {
-  const [mode, setMode] = useState("photo"); // "photo" | "video"
+  const router = useRouter();
+  const [mode, setMode] = useState("photo");
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [phase, setPhase] = useState("idle");
@@ -145,7 +146,7 @@ export default function VerifyPage() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [gps, setGps] = useState(null);
-  const [gpsStatus, setGpsStatus] = useState("idle"); // idle|getting|got|denied
+  const [gpsStatus, setGpsStatus] = useState("idle");
   const [recording, setRecording] = useState(false);
   const [videoBlob, setVideoBlob] = useState(null);
   const [videoUrl, setVideoUrl] = useState(null);
@@ -158,12 +159,19 @@ export default function VerifyPage() {
   const streamRef = useRef();
   const timerRef = useRef();
 
+  // ── AUTH GUARD ────────────────────────────────────────────────────────────
+  useEffect(() => {
+    const token = localStorage.getItem('gv_token');
+    if (!token) {
+      router.push('/auth');
+    }
+  }, [router]);
+
   const reset = () => {
     setPhase("idle"); setResult(null); setError(null);
     setModules({ spatial: "pending", liveness: "pending", ai: "pending", ocr: "pending", zk: "pending" });
   };
 
-  // ── GPS ───────────────────────────────────────────────────────────────────
   const gpsTrackRef = useRef([]);
 
   const haversine = (lat1, lon1, lat2, lon2) => {
@@ -175,21 +183,17 @@ export default function VerifyPage() {
   const getGPS = useCallback(() => {
     setGpsStatus("getting");
     if (!navigator.geolocation) { setGpsStatus("denied"); return; }
-
-    // Watch position — track distance
     const watchId = navigator.geolocation.watchPosition(
       (pos) => {
         const { latitude: lat, longitude: lon, speed } = pos.coords;
         const track = gpsTrackRef.current;
         let distance_m = 0;
-
         if (track.length > 0) {
           distance_m = track.reduce((acc, p, i) => {
             if (i === 0) return 0;
             return acc + haversine(track[i - 1].lat, track[i - 1].lon, p.lat, p.lon);
           }, 0);
         }
-
         track.push({ lat, lon });
         setGps({ lat, lon, speed_kmh: (speed || 0) * 3.6, distance_m });
         setGpsStatus("got");
@@ -197,24 +201,20 @@ export default function VerifyPage() {
       () => setGpsStatus("denied"),
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
     );
-
     return () => navigator.geolocation.clearWatch(watchId);
   }, []);
 
   useEffect(() => { getGPS(); }, []);
 
-  // ── Video recording ───────────────────────────────────────────────────────
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false });
       streamRef.current = stream;
       videoRef.current.srcObject = stream;
       videoRef.current.play();
-
       const chunks = [];
       const rec = new MediaRecorder(stream, { mimeType: "video/webm" });
       mediaRecRef.current = rec;
-
       rec.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
       rec.onstop = () => {
         const blob = new Blob(chunks, { type: "video/webm" });
@@ -223,7 +223,6 @@ export default function VerifyPage() {
         stream.getTracks().forEach(t => t.stop());
         videoRef.current.srcObject = null;
       };
-
       rec.start();
       setRecording(true);
       setRecordSeconds(0);
@@ -239,7 +238,6 @@ export default function VerifyPage() {
     clearInterval(timerRef.current);
   };
 
-  // ── File upload ───────────────────────────────────────────────────────────
   const handleFile = useCallback((f) => {
     if (!f) return;
     reset(); setFile(f);
@@ -248,7 +246,6 @@ export default function VerifyPage() {
     reader.readAsDataURL(f);
   }, []);
 
-  // ── Animate modules ───────────────────────────────────────────────────────
   const animateModules = async (mods) => {
     for (const key of ["spatial", "liveness", "ai", "ocr", "zk"]) {
       await new Promise(r => setTimeout(r, 400));
@@ -256,31 +253,25 @@ export default function VerifyPage() {
     }
   };
 
-  // ── Main verify ───────────────────────────────────────────────────────────
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://sadafmashori-gaiavolt.hf.space';
+
   const runVerify = async () => {
     const uploadFile = mode === "video" ? videoBlob : file;
     if (!uploadFile || ["hashing", "uploading", "verifying"].includes(phase)) return;
-
     reset();
     setError(null);
-
     try {
       setPhase("hashing");
       const hash = await sha256(uploadFile);
-
       setPhase("uploading");
       const selectedActivity = activityRef.current?.value || "plantation";
-
-      // Fix: Client-side size validation
       const maxSize = mode === "video" ? 20 * 1024 * 1024 : 10 * 1024 * 1024;
       if (uploadFile.size > maxSize) {
-        setError(`File too large — max ${mode === "video" ? "20MB" : "10MB"}. ${mode === "video" ? "Record shorter video." : "Compress image."}`);
+        setError(`File too large — max ${mode === "video" ? "20MB" : "10MB"}.`);
         setPhase("error");
         return;
       }
-
       const fd = new FormData();
-
       if (mode === "video") {
         fd.append("video", uploadFile, "activity.webm");
         fd.append("activity", selectedActivity);
@@ -288,24 +279,18 @@ export default function VerifyPage() {
         fd.append("image", uploadFile);
         fd.append("proof_type", selectedActivity);
       }
-
       fd.append("sha256", hash);
       fd.append("mode", mode);
-
       if (gps) {
         fd.append("lat", gps.lat.toString());
         fd.append("lon", gps.lon.toString());
         fd.append("speed_kmh", gps.speed_kmh.toString());
       }
-
       const endpoint = mode === "video" ? "/verify-video" : "/upload-ecox";
-      const flaskBase = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-        ? 'http://127.0.0.1:8000'
-        : `http://${window.location.hostname}:8000`;
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 min timeout
+      const timeoutId = setTimeout(() => controller.abort(), 120000);
       const token = getAuthToken();
-      const res = await fetch(`${flaskBase}${endpoint}`, {
+      const res = await fetch(`${API_BASE}${endpoint}`, {
         method: "POST",
         body: fd,
         signal: controller.signal,
@@ -313,10 +298,8 @@ export default function VerifyPage() {
       });
       clearTimeout(timeoutId);
       const data = await res.json();
-
       setPhase("verifying");
       await animateModules(data.modules || { spatial: "pass", liveness: "pass", ai: "pass", ocr: "pass", zk: "pass" });
-
       if (data.verdict === "VERIFIED") {
         setResult({ verdict: "VERIFIED", ...data });
         setPhase("done");
@@ -325,7 +308,7 @@ export default function VerifyPage() {
         setPhase("fraud");
       }
     } catch (err) {
-      setError("Cannot connect to Flask. Run: python app.py");
+      setError("Cannot connect to API. Please try again.");
       setPhase("error");
     }
   };
@@ -357,8 +340,6 @@ export default function VerifyPage() {
       `}</style>
 
       <div style={{ maxWidth: 520, margin: "0 auto" }}>
-
-        {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 11, letterSpacing: 4, color: "#22c55e66", textTransform: "uppercase", marginBottom: 8, fontFamily: "monospace" }}>
             GaiaVolt · Proof of Planet · Day 24
@@ -370,8 +351,6 @@ export default function VerifyPage() {
           }}>
             Upload & Verify
           </h1>
-
-          {/* GPS status */}
           <div style={{
             marginTop: 10, display: "inline-flex", alignItems: "center", gap: 6,
             padding: "5px 14px", borderRadius: 20, background: "rgba(0,0,0,0.3)",
@@ -388,7 +367,6 @@ export default function VerifyPage() {
           </div>
         </div>
 
-        {/* Mode selector */}
         <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
           {[{ id: "photo", icon: "📸", label: "Photo Proof" }, { id: "video", icon: "🎥", label: "Video Proof" }].map(m => (
             <button key={m.id} className={`mode-btn${mode === m.id ? " active" : ""}`}
@@ -403,36 +381,26 @@ export default function VerifyPage() {
           ))}
         </div>
 
-        {/* Photo mode */}
         {mode === "photo" && (
           <>
             <div style={{ marginBottom: 14 }}>
-              <div style={{ fontSize: 10, letterSpacing: 3, color: "#4b5563", fontFamily: "monospace", marginBottom: 6 }}>
-                SELECT ACTIVITY:
-              </div>
+              <div style={{ fontSize: 10, letterSpacing: 3, color: "#4b5563", fontFamily: "monospace", marginBottom: 6 }}>SELECT ACTIVITY:</div>
               <select ref={activityRef} onChange={(e) => {
                 const COMING_SOON_MSGS = {
-                  coming_soon_led: "💡 LED Lighting coming soon! We'll verify real energy savings via smart meter data. Every watt counts! 🔋",
-                  coming_soon_cycling: "🚲 Cycling coming soon! GPS-powered proof of every km you ride for the planet. 🌍",
-                  coming_soon_solar: "☀️ Solar Panels coming soon! Real-time energy output verified on blockchain. ⚡",
-                  coming_soon_ocean: "🌊 Ocean Cleanup coming soon! Geo-tagged proof from real cleanup sites. Every piece of trash matters! 🐋",
-                  coming_soon_wind: "💨 Wind Energy coming soon! Live turbine rotation data anchored on-chain. 🌬️",
-                  coming_soon_ev: "⚡ EV Charging coming soon! Smart meter proof of every clean mile driven. 🚗",
-                  coming_soon_transit: "🚌 Public Transport coming soon! GPS-verified commute tracking for greener cities. 🗺️",
-                  coming_soon_water: "💧 Water Conservation coming soon! Smart meter integration to reward every drop saved. 🌊",
-                  coming_soon_farming: "🌾 Organic Farming coming soon! Soil sensor + GPS verification for real farmers. 🌿",
-                  coming_soon_bills: "📄 Utility Bills coming soon! AI-powered bill authentication to reward energy savers. 💚",
-                  recycling: "♻️ Recycling verification coming soon! We're building ultra fraud-proof bin detection. Every recycled item will be verified with AI + GPS. Stay tuned! 🌱",
+                  coming_soon_led: "💡 LED Lighting coming soon!",
+                  coming_soon_cycling: "🚲 Cycling coming soon!",
+                  coming_soon_solar: "☀️ Solar Panels coming soon!",
+                  coming_soon_ocean: "🌊 Ocean Cleanup coming soon!",
+                  coming_soon_wind: "💨 Wind Energy coming soon!",
+                  coming_soon_ev: "⚡ EV Charging coming soon!",
+                  coming_soon_transit: "🚌 Public Transport coming soon!",
+                  coming_soon_water: "💧 Water Conservation coming soon!",
+                  coming_soon_farming: "🌾 Organic Farming coming soon!",
+                  coming_soon_bills: "📄 Utility Bills coming soon!",
+                  recycling: "♻️ Recycling coming soon!",
                 };
-                if (COMING_SOON_MSGS[e.target.value]) {
-                  alert(COMING_SOON_MSGS[e.target.value]);
-                  e.target.value = "plantation";
-                }
-              }} style={{
-                width: "100%", padding: "12px 14px", borderRadius: 10,
-                background: "rgba(0,0,0,0.5)", border: "1px solid #22c55e33",
-                color: "#e2e8f0", fontSize: 13, outline: "none", cursor: "pointer",
-              }}>
+                if (COMING_SOON_MSGS[e.target.value]) { alert(COMING_SOON_MSGS[e.target.value]); e.target.value = "plantation"; }
+              }} style={{ width: "100%", padding: "12px 14px", borderRadius: 10, background: "rgba(0,0,0,0.5)", border: "1px solid #22c55e33", color: "#e2e8f0", fontSize: 13, outline: "none", cursor: "pointer" }}>
                 <option value="plantation">🌱 Plantation ✅</option>
                 <option value="recycling">♻️ Recycling — Coming Soon</option>
                 <option value="coming_soon_led">💡 LED Lighting — Coming Soon</option>
@@ -447,15 +415,7 @@ export default function VerifyPage() {
                 <option value="coming_soon_bills">📄 Utility Bills — Coming Soon</option>
               </select>
             </div>
-
-            <div className="drop-zone"
-              onClick={() => inputRef.current?.click()}
-              style={{
-                position: "relative", borderRadius: 16, cursor: "pointer", overflow: "hidden",
-                border: "1.5px dashed #1a2e1a", background: "rgba(0,255,100,0.015)",
-                minHeight: preview ? 0 : 160,
-                display: "flex", alignItems: "center", justifyContent: "center"
-              }}>
+            <div className="drop-zone" onClick={() => inputRef.current?.click()} style={{ position: "relative", borderRadius: 16, cursor: "pointer", overflow: "hidden", border: "1.5px dashed #1a2e1a", background: "rgba(0,255,100,0.015)", minHeight: preview ? 0 : 160, display: "flex", alignItems: "center", justifyContent: "center" }}>
               {preview ? (
                 <img src={preview} alt="preview" style={{ width: "100%", display: "block", borderRadius: 15, maxHeight: 300, objectFit: "cover" }} />
               ) : (
@@ -465,56 +425,20 @@ export default function VerifyPage() {
                   <div style={{ fontSize: 11, marginTop: 6, color: "#1f2937", fontFamily: "monospace" }}>Must be fresh — GPS required</div>
                 </div>
               )}
-              <input ref={inputRef} type="file" accept="image/*" capture="environment"
-                style={{ display: "none" }} onChange={e => handleFile(e.target.files[0])} />
+              <input ref={inputRef} type="file" accept="image/*" capture="environment" style={{ display: "none" }} onChange={e => handleFile(e.target.files[0])} />
             </div>
           </>
         )}
 
-        {/* Activity Selector — Video mode */}
         {mode === "video" && (
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 10, letterSpacing: 3, color: "#4b5563", fontFamily: "monospace", marginBottom: 6 }}>
-              SELECT ACTIVITY:
-            </div>
-            <select ref={activityRef} onChange={(e) => {
-              const COMING_SOON_MSGS = {
-                recycling: "♻️ Recycling verification coming soon! We're building ultra fraud-proof bin detection. Every recycled item will be verified with AI + GPS. Stay tuned! 🌱",
-                led_lighting: "💡 LED Lighting coming soon! We'll verify real energy savings via smart meter data. Every watt counts! 🔋",
-                cycling: "🚲 Cycling coming soon! GPS-powered proof of every km you ride for the planet. 🌍",
-                solar_panels: "☀️ Solar Panels coming soon! Real-time energy output verified on blockchain. ⚡",
-                ocean_cleanup: "🌊 Ocean Cleanup coming soon! Geo-tagged proof from real cleanup sites. Every piece of trash matters! 🐋",
-                wind_energy: "💨 Wind Energy coming soon! Live turbine rotation data anchored on-chain. 🌬️",
-                ev_charging: "⚡ EV Charging coming soon! Smart meter proof of every clean mile driven. 🚗",
-                public_transport: "🚌 Public Transport coming soon! GPS-verified commute tracking for greener cities. 🗺️",
-                water_conservation: "💧 Water Conservation coming soon! Smart meter integration to reward every drop saved. 🌊",
-                organic_farming: "🌾 Organic Farming coming soon! Soil sensor + GPS verification for real farmers. 🌿",
-              };
-              if (COMING_SOON_MSGS[e.target.value]) {
-                alert(COMING_SOON_MSGS[e.target.value]);
-                e.target.value = "plantation";
-              }
-            }} style={{
-              width: "100%", padding: "12px 14px", borderRadius: 10,
-              background: "rgba(0,0,0,0.5)", border: "1px solid #22c55e33",
-              color: "#e2e8f0", fontSize: 13, outline: "none", cursor: "pointer",
-            }}>
+            <div style={{ fontSize: 10, letterSpacing: 3, color: "#4b5563", fontFamily: "monospace", marginBottom: 6 }}>SELECT ACTIVITY:</div>
+            <select ref={activityRef} style={{ width: "100%", padding: "12px 14px", borderRadius: 10, background: "rgba(0,0,0,0.5)", border: "1px solid #22c55e33", color: "#e2e8f0", fontSize: 13, outline: "none", cursor: "pointer" }}>
               <option value="plantation">🌱 Plantation ✅</option>
-              <option value="recycling">♻️ Recycling — Coming Soon</option>
-              <option value="led_lighting">💡 LED Lighting — Coming Soon</option>
-              <option value="cycling">🚲 Cycling — Coming Soon</option>
-              <option value="solar_panels">☀️ Solar Panels — Coming Soon</option>
-              <option value="ocean_cleanup">🌊 Ocean Cleanup — Coming Soon</option>
-              <option value="wind_energy">💨 Wind Energy — Coming Soon</option>
-              <option value="ev_charging">⚡ EV Charging — Coming Soon</option>
-              <option value="public_transport">🚌 Public Transport — Coming Soon</option>
-              <option value="water_conservation">💧 Water Conservation — Coming Soon</option>
-              <option value="organic_farming">🌾 Organic Farming — Coming Soon</option>
             </select>
           </div>
         )}
 
-        {/* Video mode */}
         {mode === "video" && (
           <div style={{ borderRadius: 16, overflow: "hidden", background: "#000", border: "1.5px solid #1a2e1a" }}>
             {!videoUrl ? (
@@ -527,39 +451,22 @@ export default function VerifyPage() {
                         <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ef4444", animation: "pulse 1s infinite", display: "inline-block" }} />
                         REC {recordSeconds}s
                       </div>
-                      <button onClick={stopRecording} style={{
-                        padding: "10px 20px", borderRadius: 10, border: "none",
-                        background: "#ef4444", color: "#fff", fontWeight: 700, cursor: "pointer", fontSize: 13
-                      }}>
-                        ⏹ Stop
-                      </button>
+                      <button onClick={stopRecording} style={{ padding: "10px 20px", borderRadius: 10, border: "none", background: "#ef4444", color: "#fff", fontWeight: 700, cursor: "pointer", fontSize: 13 }}>⏹ Stop</button>
                     </>
                   ) : (
-                    <button onClick={startRecording} style={{
-                      width: "100%", padding: "12px", borderRadius: 10, border: "none",
-                      background: "linear-gradient(135deg,#16a34a,#22c55e)", color: "#fff", fontWeight: 700, cursor: "pointer", fontSize: 14
-                    }}>
-                      🎥 Start Recording (min 5 sec)
-                    </button>
+                    <button onClick={startRecording} style={{ width: "100%", padding: "12px", borderRadius: 10, border: "none", background: "linear-gradient(135deg,#16a34a,#22c55e)", color: "#fff", fontWeight: 700, cursor: "pointer", fontSize: 14 }}>🎥 Start Recording</button>
                   )}
                 </div>
               </>
             ) : (
               <div style={{ padding: 16 }}>
                 <video src={videoUrl} controls style={{ width: "100%", borderRadius: 10, maxHeight: 280 }} />
-                <button onClick={() => { setVideoBlob(null); setVideoUrl(null); reset(); }}
-                  style={{
-                    width: "100%", marginTop: 10, padding: "10px", borderRadius: 10, border: "1px solid #1a2e1a",
-                    background: "transparent", color: "#6b7280", cursor: "pointer", fontSize: 12
-                  }}>
-                  ↺ Record again
-                </button>
+                <button onClick={() => { setVideoBlob(null); setVideoUrl(null); reset(); }} style={{ width: "100%", marginTop: 10, padding: "10px", borderRadius: 10, border: "1px solid #1a2e1a", background: "transparent", color: "#6b7280", cursor: "pointer", fontSize: 12 }}>↺ Record again</button>
               </div>
             )}
           </div>
         )}
 
-        {/* File info */}
         {(file || videoBlob) && (
           <div style={{ marginTop: 8, display: "flex", justifyContent: "space-between", fontSize: 11, color: "#374151", fontFamily: "monospace", padding: "0 4px" }}>
             <span style={{ color: "#22c55e66" }}>▸ {mode === "video" ? `video_${recordSeconds}s.webm` : file?.name}</span>
@@ -567,12 +474,9 @@ export default function VerifyPage() {
           </div>
         )}
 
-        {/* Modules */}
         {(file || videoBlob) && (
           <div style={{ marginTop: 18 }}>
-            <div style={{ fontSize: 10, letterSpacing: 3, color: "#1f3a1f", textTransform: "uppercase", marginBottom: 10, fontFamily: "monospace" }}>
-              ▸ Consensus Engine — All must pass
-            </div>
+            <div style={{ fontSize: 10, letterSpacing: 3, color: "#1f3a1f", textTransform: "uppercase", marginBottom: 10, fontFamily: "monospace" }}>▸ Consensus Engine — All must pass</div>
             <ModuleRow icon="🛰️" name="Spatial Metadata (GPS + Timestamp)" status={modules.spatial} />
             <ModuleRow icon="👁️" name="Liveness 2.0 (Blur / Moiré)" status={modules.liveness} />
             <ModuleRow icon="🧠" name="AI Vision — ecox_model_edge.tflite" status={modules.ai} />
@@ -581,55 +485,25 @@ export default function VerifyPage() {
           </div>
         )}
 
-        {/* Error */}
         {error && (
-          <div style={{
-            marginTop: 14, padding: "12px 16px", borderRadius: 10,
-            background: "rgba(239,68,68,0.08)", border: "1px solid #ef444433",
-            fontSize: 12, color: "#fca5a5", fontFamily: "monospace"
-          }}>
+          <div style={{ marginTop: 14, padding: "12px 16px", borderRadius: 10, background: "rgba(239,68,68,0.08)", border: "1px solid #ef444433", fontSize: 12, color: "#fca5a5", fontFamily: "monospace" }}>
             ⚠️ {error}
           </div>
         )}
 
-        {/* Verify button */}
-        <motion.button
-          whileHover={{ scale: canVerify ? 1.02 : 1 }}
-          whileTap={{ scale: canVerify ? 0.98 : 1 }}
-          className="vbtn" disabled={!canVerify} onClick={runVerify}
-          style={{
-            width: "100%", marginTop: 20, padding: "17px 0", borderRadius: 14, border: "none",
-            cursor: canVerify ? "pointer" : "not-allowed",
-            background: canVerify ? "linear-gradient(135deg,#16a34a,#22c55e)" : "rgba(255,255,255,0.04)",
-            color: canVerify ? "#fff" : "#1f2937",
-            fontSize: 15, fontWeight: 800, letterSpacing: 0.8, transition: "all 0.2s"
-          }}>
+        <motion.button whileHover={{ scale: canVerify ? 1.02 : 1 }} whileTap={{ scale: canVerify ? 0.98 : 1 }} className="vbtn" disabled={!canVerify} onClick={runVerify} style={{ width: "100%", marginTop: 20, padding: "17px 0", borderRadius: 14, border: "none", cursor: canVerify ? "pointer" : "not-allowed", background: canVerify ? "linear-gradient(135deg,#16a34a,#22c55e)" : "rgba(255,255,255,0.04)", color: canVerify ? "#fff" : "#1f2937", fontSize: 15, fontWeight: 800, letterSpacing: 0.8, transition: "all 0.2s" }}>
           {busy ? (
             <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
-              <span style={{
-                width: 16, height: 16, border: "2px solid rgba(255,255,255,0.3)", borderTopColor: "#fff",
-                borderRadius: "50%", animation: "spin 0.8s linear infinite", display: "inline-block"
-              }} />
+              <span style={{ width: 16, height: 16, border: "2px solid rgba(255,255,255,0.3)", borderTopColor: "#fff", borderRadius: "50%", animation: "spin 0.8s linear infinite", display: "inline-block" }} />
               {phaseText}
             </span>
           ) : "⚡ ⚡ Verify & Earn GaiaVolt"}
         </motion.button>
 
-        <AnimatePresence>
-          {result && <ResultCard result={result} />}
-        </AnimatePresence>
+        <AnimatePresence>{result && <ResultCard result={result} />}</AnimatePresence>
 
         {result && (
-          <button onClick={() => { setFile(null); setPreview(null); setVideoBlob(null); setVideoUrl(null); reset(); }}
-            style={{
-              width: "100%", marginTop: 12, padding: "12px 0", borderRadius: 12,
-              border: "1px solid #1a2e1a", background: "transparent",
-              color: "#374151", fontSize: 13, cursor: "pointer"
-            }}
-            onMouseOver={e => e.currentTarget.style.color = "#22c55e"}
-            onMouseOut={e => e.currentTarget.style.color = "#374151"}>
-            ↺ Upload another proof
-          </button>
+          <button onClick={() => { setFile(null); setPreview(null); setVideoBlob(null); setVideoUrl(null); reset(); }} style={{ width: "100%", marginTop: 12, padding: "12px 0", borderRadius: 12, border: "1px solid #1a2e1a", background: "transparent", color: "#374151", fontSize: 13, cursor: "pointer" }}>↺ Upload another proof</button>
         )}
 
         <div style={{ marginTop: 36, textAlign: "center", fontSize: 10, color: "#1a2e1a", fontFamily: "monospace", letterSpacing: 2 }}>
